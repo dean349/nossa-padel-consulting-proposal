@@ -243,6 +243,64 @@
   }
   @media (min-width: 640px) { .table-wrap { margin: 20px 0 32px; } }
 
+  /* ── MOBILE SCROLL HINT ──────────────────────────────────── */
+  /* Visible only below 640px — shows above every table          */
+  .scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  @media (min-width: 640px) { .scroll-hint { display: none; } }
+
+  .scroll-hint-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .scroll-hint-track {
+    flex: 1;
+    height: 4px;
+    background: var(--light);
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-hint-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue-mid), var(--indigo));
+    border-radius: 100px;
+    animation: scroll-slide 1.8s ease-in-out infinite;
+  }
+
+  @keyframes scroll-slide {
+    0%   { left: 0%;   width: 40%; }
+    50%  { left: 60%;  width: 40%; }
+    100% { left: 0%;   width: 40%; }
+  }
+
+  .scroll-hint-arrow {
+    font-size: 11px;
+    color: var(--blue-mid);
+    flex-shrink: 0;
+    animation: arrow-bounce 1.8s ease-in-out infinite;
+  }
+
+  @keyframes arrow-bounce {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50%       { transform: translateX(4px); opacity: 1; }
+  }
+
   table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 14px; }
   @media (min-width: 640px) { table { font-size: 15px; min-width: 0; } }
 
@@ -522,6 +580,7 @@
         <span class="phase-badge">Phase 1</span>
         <h3>Deep Research &amp; Market Validation</h3>
       </div>
+      <div class="scroll-hint"><span class="scroll-hint-label">Scroll</span><div class="scroll-hint-track"><div class="scroll-hint-thumb"></div></div><span class="scroll-hint-arrow">&#8594;</span></div>
       <div class="table-wrap"><table>
         <thead>
           <tr><th>#</th><th>Deliverable</th><th>Format</th><th>Detail</th></tr>
@@ -555,6 +614,7 @@
         <span class="phase-badge">Phase 2</span>
         <h3>GTM Launch Plan &amp; Execution Framework</h3>
       </div>
+      <div class="scroll-hint"><span class="scroll-hint-label">Scroll</span><div class="scroll-hint-track"><div class="scroll-hint-thumb"></div></div><span class="scroll-hint-arrow">&#8594;</span></div>
       <div class="table-wrap"><table>
         <thead>
           <tr><th>#</th><th>Deliverable</th><th>Format</th><th>Detail</th></tr>
@@ -606,6 +666,7 @@
         <span class="phase-badge">Phase 3</span>
         <h3>Sales Materials, SEO, Brand &amp; Digital</h3>
       </div>
+      <div class="scroll-hint"><span class="scroll-hint-label">Scroll</span><div class="scroll-hint-track"><div class="scroll-hint-thumb"></div></div><span class="scroll-hint-arrow">&#8594;</span></div>
       <div class="table-wrap"><table>
         <thead>
           <tr><th>#</th><th>Deliverable</th><th>Format</th><th>Detail</th></tr>
@@ -750,6 +811,7 @@
     <div class="value-table" style="margin-top:36px;">
       <div class="section-label" style="margin-bottom:10px;">Market Rate Context</div>
       <p style="font-size:14px;color:var(--slate);margin-bottom:16px;">For reference, below is what equivalent scope would cost from alternative providers — based on current market rates for each specialist category.</p>
+      <div class="scroll-hint"><span class="scroll-hint-label">Scroll</span><div class="scroll-hint-track"><div class="scroll-hint-thumb"></div></div><span class="scroll-hint-arrow">&#8594;</span></div>
       <div class="table-wrap"><table>
         <thead>
           <tr><th>Provider Type</th><th>Comparable Scope</th><th>Typical Fee</th></tr>
@@ -875,6 +937,7 @@
     <h2 class="section-title">Recommended Engagement Path</h2>
 
     <div class="path-table">
+      <div class="scroll-hint"><span class="scroll-hint-label">Scroll</span><div class="scroll-hint-track"><div class="scroll-hint-thumb"></div></div><span class="scroll-hint-arrow">&#8594;</span></div>
       <div class="table-wrap"><table>
         <thead>
           <tr><th>Period</th><th>Tier</th><th>Monthly</th><th>Rationale</th></tr>
