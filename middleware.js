@@ -2,8 +2,8 @@ export const config = {
   matcher: '/:path*',
 };
 
-const USERNAME = process.env.BASIC_AUTH_USER ?? 'antigravity';
-const PASSWORD = process.env.BASIC_AUTH_PASSWORD ?? 'Lx7XG$@KWWf!j%wt6xdA';
+const USERNAME = process.env.BASIC_AUTH_USER ?? 'Antigravity';
+const PASSWORD = process.env.BASIC_AUTH_PASSWORD ?? 'Velyon225$!';
 
 export default function middleware(request) {
   const authHeader = request.headers.get('authorization');
